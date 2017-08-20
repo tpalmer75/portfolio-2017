@@ -1,0 +1,15 @@
+extends ../../templates/header.jade
+
+block vars
+	- title='Lucidchart Documents List'
+
+block body
+	article.portfolio
+		header
+			a(href="/")
+				include ../../includes/arrow-left.svg
+				span Back to Home
+		include portfolio-content.html
+		footer
+			p 
+				a(href="/") Back to Home

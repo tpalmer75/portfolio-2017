@@ -1,0 +1,91 @@
+extends templates/header.jade
+
+block vars
+	- var title='Home'
+
+block body
+		.wrapper
+			header#main-header.row
+				.box
+				h1
+					span.accent Hi, I'm Taylor. 
+					div I’m a senior UX designer in Utah. You can find me designing at 
+						a.underline(href="https://golucid.co" title="Lucid Software") Lucid Software
+						| , or you can see my work below.
+				.social-icons
+					a(href="mailto: tpalmer.ixd@gmail.com" title="Email")
+						span.screen-reader Email
+						include includes/email.svg
+					a(target="_blank" href="https://www.twitter.com/@_taylorpalmer" title="Twitter")
+						span.screen-reader Twitter
+						include includes/twitter.svg
+					a(target="_blank" href="https://dribbble.com/taylorpalmer" title="Dribbble")
+						span.screen-reader Dribbble
+						include includes/dribbble.svg
+					a(target="_blank" href="https://medium.com/@taylorp" title="Medium")
+						span.screen-reader Medium
+						include includes/medium.svg
+					a(target="_blank" href="https://github.com/tpalmer75" title="Github")
+						span.screen-reader Github
+						include includes/github-circle.svg
+					a(target="_blank" href="http://codepen.io/tpalmer75/" title="Codepen")
+						span.screen-reader Codepen
+						include includes/codepen.svg
+					a(target="_blank" href="https://www.linkedin.com/in/taylor-palmer-6264a171" title="LinkedIn")
+						span.screen-reader LinkedIn
+						include includes/linkedin.svg
+
+			.row
+				.projects
+					header
+						a(target="_blank" href="https://www.behance.net/tpalmerixd" title="Taylor Palmer on Behance")
+							include includes/briefcase.svg
+							h2 My Work
+					ul.flex-2
+						li
+							a(href="/projects/lucidchart-docs-list")
+								img(src="/projects/lucidchart-docs-list/cover.jpg" alt="")
+								h3 Lucidchart Documents List
+						li
+							a(href="/projects/lucid-voice-and-tone")
+								img(src="/projects/lucid-voice-and-tone/cover.png" alt="")
+								h3 Lucid Voice and Tone
+			.row.parent
+				.projects.experience.half
+					header
+						a(target="_blank" href="https://medium.com/@taylorp" title="@taylorp on Medium")
+							include includes/file-document.svg
+							h2 Experience
+					ul.placeholder(ng-hide="mediumLoaded")
+						li 
+							h3 Sr UX Designer @ Lucid Software
+							h4 Apr 2015–Present
+						li 
+							h3 Web Designer @ BYU Center for Teaching & Learning
+							h4 Oct 2013–Apr 2015
+						li 
+							h3 Front End Developer Intern @ RiSER Agency
+							h4 Apr 2014–Aug 2014
+						li 
+							h3 B.A. in Graphic Design @ BYU
+							h4 Apr 2015
+				.projects.accomplishments.half
+					header
+						include includes/trophy.svg
+						h2 Accomplishments
+					ul
+						li
+							h3 Speaker at 
+								a.underline(target="_blank" href="https://frontutah.com/") Front 2017
+						li
+							h3 Workshop at 
+								a.underline(target="_blank" href="frontutah.com/") Front 2018 
+						li
+							h3 Honorable Mention 
+								a.underline(target="_blank" href="http://devpost.com/software/project-almuerzo") Devpost 
+								|  USDA Hackathon
+						li
+							h3 Featured on 
+								a.underline(target="_blank" href="https://www.producthunt.com/tech/ux-tools-2") Product Hunt
+								|  for 
+								a.underline(target="_blank" href="http://uxtools.co") uxtools.co
