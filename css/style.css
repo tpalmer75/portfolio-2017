@@ -174,8 +174,8 @@ a.underline {
   text-decoration: underline;
 }
 .accent {
-  color: red;
-  fill: red;
+  color: blue;
+  fill: blue;
 }
 .wrapper {
   max-width: 1008px;
@@ -197,7 +197,7 @@ header#main-header {
   }
 }
 header#main-header .box {
-  border: 2px solid red;
+  border: 2px solid blue;
   position: absolute;
   width: 65%;
   height: 100%;
@@ -234,7 +234,7 @@ header#main-header .box {
   }
 }
 .social-icons svg {
-  fill: red;
+  fill: blue;
   margin-right: 16px;
   margin-bottom: 8px;
 }
@@ -280,7 +280,7 @@ header#main-header .box {
   flex: 0 0 auto;
 }
 .projects svg path {
-  fill: red;
+  fill: blue;
 }
 .projects ul.flex-2 {
   display: flex;
@@ -514,7 +514,7 @@ article header {
 }
 article header a {
   display: flex;
-  color: red;
+  color: blue;
 }
 article header svg {
   fill: currentColor;
