@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+	<title>Office Impact | About Us</title>
+	<meta name="Title" content="Office Impact - Making an impact on your business">
+	<meta name="Subject" content="Office Impact is a national distributor of Office Products and Supplies">
+	<meta name="Description" content="Office Impact is a woman-owned, national distributor of office products.">
+	<meta name="Keywords" content="Office Impact, office impact, office supplies, office products, computer supplies, office furniture, coffee and breakroom supplies, cleaning and janitorial supplies, healthcare, first aid, custom printed forms, forms, envelopes, letterheads, business cards, brochures, promotional items, non-catalog items, catalog, catalog items, toner, toners, toner cartridges, toner supplies, printer cartridges, print cartridges, print cartridge">
+	<meta name="Language" content="English">
+	<meta name="Distribution" content="Global">
+	<meta name="Copyright" content="© Ofcimpact.com">
+	<meta name="Robots" content="All">
+
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+
+
+	<header id="main-header">
+		<div class="wrapper">
+			<h1 class="screen-reader">Office Impact</h1>
+			<a href="/"><img src="/img/logo.gif" id="logo"/></a>
+		</div>
+		<nav>
+			<div id="mobile-menu">
+				<img src="/img/hamburger.svg">
+				<span>Menu</span>
+			</div>
+			<div id="ribbon">
+				<div class="wrapper">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about-us">About Us</a></li>
+						<li><a href="/services">Services</a></li>
+						<li><a href="/contact-us">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+
+	<section>
+		<div class="wrapper">
+			<div class="grid-wrapper" style="margin-top: 15px;">
+				<div class="col col-4-1 force-non-break">
+					<div class="col-content image-only">
+						<img src="/img/shopping-cart.jpg">
+					</div>
+				</div>
+				<div class="col col-4-3">
+					<div class="col-content plain-text">
+						<h2 class="green">Login</h2>
+						<form method="post" action="https://www.redcheetah.com/ofcimpact/outpost/login">
+							<div>
+								<label for="username">Username:</label> 
+								<input type="text" name="username" value="" autocomplete="off">
+							</div>
+							<div>
+								<label for="password">Password:</label> 
+								<input type="password" name="password" value="" autocomplete="off">
+							</div>
+							<input class="btn" type="submit" name="form_action" value="Login">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<footer>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about-us">About Us</a></li>
+			<li><a href="/services">Services</a></li>
+			<li><a href="/contact-us">Contact Us</a></li>
+		</ul>
+		<p>© Copyright 2017 Office Impact. All rights reserved.</p>
+	</footer>
+	<script>
+	// Mobile menu class toggling
+  var mobileMenu = document.getElementById("mobile-menu");
+  var ribbonMenu = document.getElementById("ribbon");
+
+  mobileMenu.addEventListener("click", function() {
+  	if (ribbon.classList.contains('open')) {
+  		ribbon.classList.remove('open');
+  	} else {
+  		ribbon.classList.add('open');
+  	}
+  }, false);
+	</script>
+</body>
