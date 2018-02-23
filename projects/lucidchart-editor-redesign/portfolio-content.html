@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="lucidcharteditorredesign">Lucidchart Editor Redesign</h1>
+
+<figure>
+<img src="cover.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="projectoverview">Project Overview</h2>
+
+<p>I worked as lead designer to redesign Lucid’s flagship product, <a href="https://lucidchart.com">Lucidchart</a>, while the engineering team rebuilt it from the ground up with a new technology base. The project took longer than expected to exit the Beta phase before eventually winning a 50/50 A/B test.</p>
+
+<h2 id="timeline">Timeline</h2>
+
+<p>In late 2015, Lucid expressed interest in redesigning their flagship product, Lucidchart.</p>
+
+<h3 id="1.productaudituserinterviewsandprototypingfall2015">1. Product Audit, User Interviews, and Prototyping (Fall 2015)</h3>
+
+<p>Analysis of existing features and their usage, In-depth customer interviews with about 30 existing customers using an HTML/CSS/JS prototype of proposed new designs.</p>
+
+<h3 id="2.alphareleasespring2016">2. Alpha Release (Spring 2016)</h3>
+
+<p>A limited version of the new design with some missing features was made available to a small group of trusted testers for initial feedback.</p>
+
+<h3 id="3.betareleasesummer2016">3. Beta Release (Summer 2016)</h3>
+
+<p>An opt-in beta allowed customers to jump in and out of the new experience until they felt comfortable staying in the new experience (and that all of the features they needed were available).</p>
+
+<h3 id="4.abtestingsummer2016–summer2017">4. A/B Testing (Summer 2016 – Summer 2017)</h3>
+
+<p>A/B tests monitored the health of the new design with new customers.</p>
+
+<h3 id="5.officialrelease">5. Official Release</h3>
+
+<p>A final A/B test determined the new design the winner, and it is now the official and only Lucidchart experience.</p>
+
+<h2 id="myrole">My Role</h2>
+
+<p>I worked on a team of 4 during initial research (3 designer, 1 product manager), then was the sole lead designer during the alpha and beta phases. Half way through beta, a new designer was brought onto the team (who I managed) that worked on the project until final release.</p>
+
+<h2 id="goals">Goals</h2>
+
+<p>While some of these goals were both spoken and unspoken, these guiding principles stayed with this project until the end:</p>
+
+<ul>
+<li>Remove as much as possible from the old, bloated product and only bring it back if absolutely necessary</li>
+<li>Update the product aesthetically to create a professional, trustworthy enterprise appearance</li>
+<li>Create a sustainable and scalable component system to be reused in future product development</li>
+</ul>
+
+<h2 id="1.productaudituserinterviewsandprototyping">1. Product Audit, User Interviews, and Prototyping</h2>
+
+<p>I worked with two other designers and a product manager during the discovery and research process. We began understanding existing features by analyzing performance metrics.</p>
+
+<figure>
+<img src="feature-usage.png" alt="Feature metrics (like this breakdown of the File menu) helped us prioritize and focus." />
+<figcaption>Feature metrics (like this breakdown of the File menu) helped us prioritize and focus.</figcaption>
+</figure>
+
+<p>We simplified the Lucidchart interface into three main segmentations that were easily recognized and articulated by our customers:</p>
+
+<figure>
+<img src="information-architecture.png" alt="This new proposed architecture was easily recognized and embraced by customers during the early design iteration phase." />
+<figcaption>This new proposed architecture was easily recognized and embraced by customers during the early design iteration phase.</figcaption>
+</figure>
+
+<p>Customer interviews helped us solidify the core problems that our existing customers were facing. They also took us through several iterations of key components like the option bar. Much time was spent the painstakingly find the right icons and organization for to meet user mental models. I would argue it’s still not perfect, but it’s getting there.</p>
+
+<figure>
+<img src="option-bar.png" alt="Just a sample of the many iterations of the Lucidchart Option Bar" />
+<figcaption>Just a sample of the many iterations of the Lucidchart Option Bar</figcaption>
+</figure>
+
+<p>We branched our various redesign ideas into three main directions and designed multiple prototypes centered around those directions. We would run various customers through only one experience and compare the feedback, or if a customer brought up a specific problem we might ask them to try another prototype to see if it better solved their problem.</p>
+
+<p>Prototypes were originally built as messy conglomerates of code in Codepen, and gradually evolved to use a cleaner in-house component system based on Angular 1. These robust experiences included the ability to drag out shapes, change colors, open and close menus, and use real text inputs. The perspective gained from these prototypes experiences was invaluable.</p>
+
+<p>(You can try an older version of the prototype <a href="https://lucidsoftware.github.io/particle/latest-prototype/chart-editor/index.html">here</a>—I&#8217;ve since switched to Framer.)</p>
+
+<figure>
+<img src="particle-prototype.gif" alt="Though this is obviously a later-stage prototype, it gives a sense of what they were capable of." />
+<figcaption>Though this is obviously a later-stage prototype, it gives a sense of what they were capable of.</figcaption>
+</figure>
+
+<p>Because we were testing with several users across multiple prototypes, we grouped feedback into themes and color coded them according to their severity and positivity.</p>
+
+<figure>
+<img src="prototype-feedback.png" alt="Customer feedback organized according to theme and prototype variant." />
+<figcaption>Customer feedback organized according to theme and prototype variant.</figcaption>
+</figure>
+
+<h3 id="⚠️alessonlearned">⚠️ A Lesson Learned</h3>
+
+<p>While these customer interviews were incredibly insightful and useful, they were narrow-minded. They focused on some of our strongest and most vocal users who advocated powerful, advanced features. We missed the perspective of quieter, newer customers who use the product less and need a more approachable interface. This would come back to harm us in the Beta stage of the project.</p>
+
+<h2 id="2.alpharelease">2. Alpha Release</h2>
+
+<p>While the design team researched and iterated, the engineering team was busy building the foundations of the new redesign. As our ideas solidified, we passed along basic concepts and general directions. After a few months, a heavily pared-down and feature incomplete version of Lucidchart was unveiled for specific, targeted customers.</p>
+
+<p>This protected environment allowed certain customers to try the young, volatile product without the threat of losing important work and information. They were encouraged the share their raw and honest feedback. One of the most significant changes, driven by this feedback, was:</p>
+
+<h3 id="pagecreation">Page Creation</h3>
+
+<p>We changed page creation from tab at the top of the screen to a draw of tiled previews that slid down from the top of the screen. This is a much slower identification and navigation process than tabs, but is much better for sorting through large numbers (100+) of pages. Unfortunately, less than 2% of our customers ever reach this number of pages, and we were appealing to the minority.</p>
+
+<p>I designed and proposed a new, smarter way of managing tabs while still maintaining the ability to view the tiled previews. Through an interactive prototype, testers were able to actually create, rename, and sort pages to organize them like they would in the real product. Some of the improvement included:</p>
+
+<ul>
+<li>Renaming occurred inline by double clicking, rather than in a modal</li>
+<li>The tiled previews were still accessible through an icon</li>
+<li>When the tabs exceeded the visible space, they could be scrolled with the mouse or navigated with arrows</li>
+<li>Tabs automatically scrolled into a visible position when selected</li>
+</ul>
+
+<figure>
+<img src="page-tabs-2.gif" alt="This was the prototype sent to alpha testers to try the new page tab experience (it would eventually be replaced by tabs on the bottom of the screen)." />
+<figcaption>This was the prototype sent to alpha testers to try the new page tab experience (it would eventually be replaced by tabs on the bottom of the screen).</figcaption>
+</figure>
+
+<p>I sent the prototype to the Alpha testers through a Google Form. The results of the survey indicated that this new approach was a huge success, and this design would remain (but be moved to the bottom of the screen) throughout the launch.</p>
+
+<figure>
+<img src="alpha-feedback.png" alt="Feedback from Lucidchart alpha tester about my new proposed page tab design." />
+<figcaption>Feedback from Lucidchart alpha tester about my new proposed page tab design.</figcaption>
+</figure>
+
+<h2 id="3.betarelease">3. Beta Release</h2>
+
+<p>After more feature development, Lucidchart became available as an opt-in Beta for general use. The number of testers quickly increased from a few hundred to several thousand, and the design was pushed to its limits.</p>
+
+<p>I collaborated with my scrum team to develop a quick way to monitor tester feedback in this environment. It worked something like the image below. Whenever a user exited the Beta mode, we asked them why they were leaving and to categorize the reason they were switching back. This feedback was managed through Zendesk, but was alternatively pumped into a Slack channel where any could read the messages in real time.</p>
+
+<figure>
+<img src="beta-feedback-flow.png" alt="Having beta feedback pumped into a Slack channel allowed me to feel like I always had a pulse on the new design." />
+<figcaption>Having beta feedback pumped into a Slack channel allowed me to feel like I always had a pulse on the new design.</figcaption>
+</figure>
+
+<p>We flagged the messages with emojis as they came through ( ✅ meant someone had logged it on our feature prioritization spreadsheet, ❓meant the person reading didn’t know what the tester was talking about and needed help, and various other emoji were used to denote certain features, like a page 📄 ). No, this wasn’t the most genius or efficient system, but it was live customer feedback! It was absolutely vital to improving our beta experience.</p>
+
+<figure>
+<img src="slack-beta-feedback.png" alt="Some example beta feedback tickets from beta testers." />
+<figcaption>Some example beta feedback tickets from beta testers.</figcaption>
+</figure>
+
+<p>Some of the beta improvement we made included:</p>
+
+<h3 id="removingthehamburgermenu">Removing the Hamburger Menu</h3>
+
+<p>In an attempt to streamline and simplify the interface, we moved all of the existing File menu functions into a side menu that was accessible through a hamburger icon. While trendy and elegant, all metrics hidden behind this menu suffered heavily. One principle stayed constant throughout this process: the more visible a feature is, the more it will be used.</p>
+
+<figure>
+<img src="hamburger-menu.png" alt="Yeah, hiding "File" behind a hamburger menu was a bad idea." />
+<figcaption>Yeah, hiding &#8220;File&#8221; behind a hamburger menu was a bad idea.</figcaption>
+</figure>
+
+<h3 id="movingthesharemenu">Moving the Share Menu</h3>
+
+<p>I had great hopes and dreams for a sharing function (think Google Docs) that lived in a sidebar of the interface and felt integrated rather than in a modal. At the end of the day, analytics showed that sharing was underperforming and had to be promoted like it was in the old interface.</p>
+
+<figure>
+<img src="share-menu.png" alt="(Left) My attempt at an integrated share menu that worked wonderfully but simply wasn't visible enough. (Right) A much more successful Share button that follows more of a Google Docs pattern." />
+<figcaption>(Left) My attempt at an integrated share menu that worked wonderfully but simply wasn&#8217;t visible enough. (Right) A much more successful Share button that follows more of a Google Docs pattern.</figcaption>
+</figure>
+
+<h3 id="givingbackscreenrealestate">Giving Back Screen Real Estate</h3>
+
+<p>My new design was modern, consistent, and professional. It was also visually larger than its predecessor, and customers knew it. Some of the strongest feedback we received was to put the interface on a diet. We shaved off pixels from every menu and toolbar we could.</p>
+
+<p>Sometimes, customer interpreted toolbars as being larger than the old design when, in fact, they were the same size (there’s a lesson here about perception and communication). After a few iterations, these problems were solved and customers felt comfortable again.</p>
+
+<h3 id="colorpickerunification">Color Picker Unification</h3>
+
+<p>Alpha testers responded very positively to a new approach to a color picker: fill, border, and text all wrapped into one simple callout. While it had a slight learning curve (because it was different from other content editing interfaces) we felt that the efficiency of it outweighed the learning curve.</p>
+
+<p>Beta testers felt otherwise. Breaking this UI back into three separate elements saw an increase in core tasks (creating and formatting shapes).</p>
+
+<figure>
+<img src="color-picker.png" alt="3 color pickers together might be faster, but people are used to three separate pickers." />
+<figcaption>3 color pickers together might be faster, but people are used to three separate pickers.</figcaption>
+</figure>
+
+<h3 id="closingtherightdock">Closing the Right Dock</h3>
+
+<p>Despite reusing a familiar pattern (an “x” in the top right corner) some customers struggled to close the Lucidchart right dock. This contributed to the pains customers felt about screen real estate because their screen felt smaller when they couldn’t close this panel.</p>
+
+<p>Instead of an “x”, we changed the design to two small arrows in line with the other icons. This variation saw much better results.</p>
+
+<figure>
+<img src="close-right-dock.png" alt="Customers better understood the concept of the double arrows than the "X"." />
+<figcaption>Customers better understood the concept of the double arrows than the &#8220;X&#8221;.</figcaption>
+</figure>
+
+<h3 id="undoingtheundobutton">Undoing the Undo Button</h3>
+
+<p>For this feature some might ask, &#8220;has science gone too far?&#8221; We audaciously removed the &#8220;undo&#8221; button in an attempt to see how far we could push our customers to rely on hotkeys and other traditional paradigms. We quickly learned that not all customers are made equally, and <em>many</em> of our customers refuse to use keyboard shortcuts.</p>
+
+<figure>
+<img src="undo.png" alt="Don't rely on customers to use hotkeys." />
+<figcaption>Don&#8217;t rely on customers to use hotkeys.</figcaption>
+</figure>
+
+<h2 id="4.abtesting">4. A/B Testing</h2>
+
+<p>The Product team began running small A/B tests from the moment the Beta phase began (despite being feature incomplete). The new beta experience would be automatically enabled for a small percentage of new customers to compare their behavior with new customers using the old experience. The most important metrics monitored were:</p>
+
+<ul>
+<li>First payments for the product</li>
+<li>Sharing documents</li>
+<li>Returning documents</li>
+<li>New user retention rate (NURR)</li>
+</ul>
+
+<figure>
+<img src="final-ab-test.png" alt="A final readout of the new experience vs the old experience in an A/B test with new customers." />
+<figcaption>A final readout of the new experience vs the old experience in an A/B test with new customers.</figcaption>
+</figure>
+
+<p>Even though the first several A/B tests fell short, the metrics began to even out as the product approached feature parity. Unfortunately, we had made a big mistake as a product team that would cost us almost a year of development time.</p>
+
+<h3 id="⚠️onebigmistake">⚠️ One Big Mistake</h3>
+
+<p>Early in the research phase design, product, and engineering met to discuss the phases and development method for the redesign. Two approaches were proposed:</p>
+
+<ol>
+<li>Build the new design holistically from the ground up using new technology, and test it against the old design.</li>
+<li>Build pieces of a new design one-by-one, and test them as they were integrated into the product.</li>
+</ol>
+
+<p>The team ultimately rallied around option 1. In hindsight, option 2 was the obvious right answer. By performing a wholesale swap of the entire interface <em>and</em> the underlying technology, the team was powerless to diagnose problems or move metrics once we reached feature parity.</p>
+
+<p>For example: when alpha testing began, the new experience took an average of 21 second to load while the old experience took 13 seconds. Engineering problems made it much more difficult to decipher challenges in the design.</p>
+
+<p>The Lucidchart editor is a single-page app. The entire experience happen in one interface. Any drop in metrics could have been due to technology bugs or bad design, or a combination of the two. Diagnosis was difficult, and winning an A/B was even more difficult.</p>
+
+<h3 id="movingintomanagement">Moving Into Management</h3>
+
+<p>Halfway during this A/B testing process, I moved to a different team and started managing the designer who took my place in the redesign effort. I did my best to transfer my skills and understanding to her while she fought tooth and nail to help the new experience win.</p>
+
+<h2 id="5.officialrelease">5. Official Release</h2>
+
+<p>After nearly a year of struggling to win A/B tests, the team found a winning combination and implemented one final test of the old design against the new design. The results were positive, and the team officially moved the new experience to be the only experience.</p>
+
+<figure>
+<img src="editor-redesign.png" alt="The final, current design of the Lucdichart editor." />
+<figcaption>The final, current design of the Lucdichart editor.</figcaption>
+</figure>
+
+<h2 id="retrospective">Retrospective</h2>
+
+<p>If I had to do it all over again, I would:</p>
+
+<ul>
+<li>Be more careful about who I interviewed, a construct a better sample of our customer base</li>
+<li>Rebuild the old experience using new UI, but without moving anything (to test the success of new icons, aesthetics)</li>
+<li>Swap out small parts of the design one at a time, instead of a wholesale swap</li>
+<li>Be more thoughtful about visual aesthetics before development began (the component system came to be without any grid of typographic system)</li>
+<li>Despite Lucidchart being somewhat a swiss army knife (with infinite use cases), I would have tried harder to tie down a prioritize to strongest use cases and champion their success</li>
+</ul>
+
+</body>
+</html>
+

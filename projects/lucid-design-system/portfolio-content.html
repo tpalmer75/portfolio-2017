@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="luciddesignsystem">Lucid Design System</h1>
+
+<figure>
+<img src="cover.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="purpose">Purpose</h2>
+
+<p>When I first arrived at Lucid, there was a loose style guide for only small, specific sections to the product. Everything else had been designed and built from scratch by engineers before the design team formed.</p>
+
+<p>In late 2016, we began laying the ground work for a complete redesign of Lucid’s flagship product, Lucidchart. As the engineering team worked to develop a new codebase from the ground up, the design team stayed in step by crafting reusable patterns and components for a cleaner front end.</p>
+
+<figure>
+<img src="overview.png" alt="Components Overview" />
+<figcaption>Components Overview</figcaption>
+</figure>
+
+<h2 id="myrole">My Role</h2>
+
+<p>Many hands touch a design system, and any good design system is robust enough to take input from an entire team. Because I was the lead designer on the Lucidchart redesign, a significant portion of that work became (unknowingly) the foundation of a new visual style for Lucid products.</p>
+
+<p>Since then, I’ve met frequently with engineering team leads and other stakeholders to ensure consistency and compatibility, while also carefully striking the balance between constraint and evolution. Because a design system can’t account for every design problem, it needs a framework to allow for the introduction of new patterns.</p>
+
+<h2 id="experimentsandtesting">Experiments and Testing</h2>
+
+<p>The Lucid design team has hovered around 6 designers for the past few years. Those designers worked on different cross-functional teams, and sometimes iterated and innovated on existing patterns. To propose this pattern to the design system, they place it on a page in the design system Sketch file called “Experiments and Testing.” We review this page in our biweekly team meetings.</p>
+
+<h2 id="innovatingonthehandoffworkflow">Innovating on the Handoff Workflow</h2>
+
+<figure>
+<img src="zeplin.png" alt="Using Zeplin.io for Handoff" />
+<figcaption>Using Zeplin.io for Handoff</figcaption>
+</figure>
+
+<p>When redlining apps like Zeplin and Avocode started to show up in 2016, we were quick to jump on board. We’ve used Zeplin for design handoff ever since. It’s even adjusted to deliver the appropriate Less CSS color variables from our design system.</p>
+
+<p>While a design system promotes accuracy and consistency among designers, however, it’s not always analogous with an engineering component library. Every attempt to create such a library at Lucid had failed in the past. Rather than continue in vain to promote a component library to 60 engineers on different teams, the design team took the burden of documentation on themselves, and we created what we call “The Bill of Materials.”</p>
+
+<p>Essentially, it’s a list of the engineering (in this case, Angular 2) components that were used to compose the design. It contains some unique information that’s helpful for construction of the interface:</p>
+
+<ul>
+<li>The code name of the component (ex: <lucid-button>)</li>
+<li>The name of the designer who originally designed it</li>
+<li>The name of the engineer who originally built it</li>
+<li>A few example locations where it can be found to see how it was implemented</li>
+<li>A component status: is this brand new, already existing, needing modification, etc.</li>
+</ul>
+
+<figure>
+<img src="bill-of-materials.png" alt="An example Bill of Materials" />
+<figcaption>An example Bill of Materials</figcaption>
+</figure>
+
+<p>With these tools in hand, we empowered engineers to understand exactly what they’re building and who to talk to if they have questions.</p>
+
+<p>With each story, we try to handoff a Zeplin link for redlining and a Bill of Materials for component review.</p>
+
+<h2 id="lessonslearned">Lessons Learned</h2>
+
+<p>We tend to review and revise our design system about every year (in additional to the bi-weekly check-ins). Along the way, there are certain things I wish we had tackled from the beginning. For example:</p>
+
+<h3 id="1.missingstepsinthedesignsystem">1. Missing steps in the design system</h3>
+
+<p>Some designs systems refer to these as “Foundations”, but we simply ignored the basic buildings blocks of any style guide. Spacing, grid, and typography are completely lacking, so some components don’t quite feel like they’re part of the family.</p>
+
+<h3 id="2.don’tjustshowitexplainwhy">2. Don’t just show it, explain why</h3>
+
+<p>When new hires come on the team, they see an endless wall of Sketch components and symbols. What’s missing is understanding <em>when</em> and <em>why</em> to use these different components. When should a designer use a dropdown, radio buttons, check boxes, or a toggle switch? These answers might be different for each organization, but it should be the same across the design team.</p>
+
+<h3 id="3.adesignsystemneedsalotmorethancomponents.">3. A design system needs a lot more than components.</h3>
+
+<p>In my <a href="http://taylorpalmer.co/projects/lucid-voice-and-tone/">Lucid Voice and Tone</a> project I showed how important messaging and copy is to design. These, and other fine-tuned philosophies, can help a brand feel cohesive. We hope to add even more guidelines, like motion, in the future.</p>
+
+<h2 id="nextsteps">Next Steps</h2>
+
+<p>At the time of writing, February 2018, I and another team member are working on the revising the design system and implementing the new ideas mentioned above.</p>
+
+</body>
+</html>
+

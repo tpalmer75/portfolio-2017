@@ -138,7 +138,7 @@ table {
 }
 body {
   font-family: 'Libre Franklin', Franklin Gothic, Helvetica, sans-serif;
-  color: #212121;
+  color: #555;
   line-height: 1.5;
 }
 h1 {
@@ -158,7 +158,6 @@ h1,
 h2 {
   font-weight: 600;
   font-size: 20px;
-  letter-spacing: 1px;
 }
 h3 {
   font-size: 18px;
@@ -174,8 +173,8 @@ a.underline {
   text-decoration: underline;
 }
 .accent {
-  color: blue;
-  fill: blue;
+  color: #555;
+  fill: #555;
 }
 .wrapper {
   max-width: 1008px;
@@ -197,7 +196,7 @@ header#main-header {
   }
 }
 header#main-header .box {
-  border: 2px solid blue;
+  border: 2px solid #555;
   position: absolute;
   width: 65%;
   height: 100%;
@@ -234,12 +233,12 @@ header#main-header .box {
   }
 }
 .social-icons svg {
-  fill: blue;
+  fill: #555;
   margin-right: 16px;
   margin-bottom: 8px;
 }
 .social-icons svg:hover {
-  fill: #212121;
+  fill: #555;
 }
 .row {
   display: flex;
@@ -256,7 +255,7 @@ header#main-header .box {
 }
 .projects header {
   width: 30%;
-  border-bottom: 2px solid #212121;
+  border-bottom: 2px solid #555;
   margin-bottom: 48px;
   padding-bottom: 24px;
   display: flex;
@@ -280,7 +279,7 @@ header#main-header .box {
   flex: 0 0 auto;
 }
 .projects svg path {
-  fill: blue;
+  fill: #555;
 }
 .projects ul.flex-2 {
   display: flex;
@@ -434,6 +433,7 @@ article {
   max-width: 700px;
   margin: auto;
   padding: 0 20px;
+  font-size: 16px;
 }
 article h1,
 article h2,
@@ -443,24 +443,30 @@ article h5,
 article h6 {
   padding: 0;
   line-height: 1.2;
-  margin-top: 30px;
+  margin: 2em 0 1.2em;
   font-weight: bold;
 }
 article h1 {
-  font-size: 40px;
+  font-size: 2em;
+  margin-bottom: 40px;
 }
 article h2 {
-  font-size: 36px;
+  margin-top: 4em;
+  font-size: 1.6em;
 }
 article h3 {
-  font-size: 32px;
+  font-size: 1.25em;
+  margin-bottom: .5em;
 }
 article h4 {
-  font-size: 24px;
+  font-size: 1.15em;
+}
+article a {
+  text-decoration: underline;
 }
 article p {
   line-height: 1.6;
-  margin: 20px 0;
+  margin: 0 0 20px;
 }
 article strong {
   font-weight: bold;
@@ -469,14 +475,8 @@ article em {
   font-style: italic;
 }
 @media all and (max-width: 767px) {
-  article h1 {
-    font-size: 32px;
-  }
-  article h3 {
-    font-size: 28px;
-  }
-  article h4 {
-    font-size: 21px;
+  article {
+    font-size: 14px;
   }
 }
 @media all and (max-width: 500px) {
@@ -507,14 +507,14 @@ article figcaption {
   font-size: .75em;
   color: #999;
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 20px;
 }
 article header {
   margin-top: 20px;
 }
 article header a {
   display: flex;
-  color: blue;
+  color: #555;
 }
 article header svg {
   fill: currentColor;
@@ -524,7 +524,7 @@ article footer {
   margin-top: 80px;
 }
 article ul {
-  margin: 20px 0 0 20px;
+  margin: 20px 0 20px 20px;
   list-style-type: disc;
 }
 article blockquote {
