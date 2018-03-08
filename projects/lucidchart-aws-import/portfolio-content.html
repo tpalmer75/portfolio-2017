@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="awsimport">AWS Import</h1>
+
+<figure>
+<img src="cover.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="overview">Overview</h2>
+
+<p>Over more than a year, I helped my team explore and design new and innovative ways to import an AWS infrastructure (explained below) and turn it into a real, living Lucidchart diagram.</p>
+
+<h2 id="myroleteam">My Role &amp; Team</h2>
+
+<p>I designed through multiple iterations of the Lucidchart AWS Import feature alongside a product manager, three engineers, and a QA specialist. I led user interviews, design reviews, and worked alongside engineers during implementation.</p>
+
+<p>My team made frequent presentations to leadership and other stakeholders about progress, possible pricing segments, and how other departments should pitch the feature. Many of these efforts were lead by the product manager.</p>
+
+<p><em>Please note that the orange and blue shapes in the following diagrams were not designed by me, but are the AWS standard for diagramming.</em></p>
+
+<h2 id="timeline">Timeline</h2>
+
+<p>The first iteration began in summer of 2016 with limited resources, and the much more robust second iteration took place during the better part of 2017.</p>
+
+<h2 id="whatisamazonwebservicesaws">What is Amazon Web Services (AWS)?</h2>
+
+<p>AWS is a backend software service provided by Amazon to run anything from a standard server to authentication and notifications.</p>
+
+<p>One of the more difficult aspects of this project was wrapping my head around AWS and its various components. I spent a lot of time at whiteboard with fellow engineers drawing sample diagrams and proposing fictional scenarios to understand the behavior of virtual and physical backend infrastructure.</p>
+
+<p>I’m not an AWS expert by any stretch of the imagination, but I can talk my way around regions, VPCs, availability zones, subnets, ELBs, EC2s, and a whole slew of other acronyms.</p>
+
+<figure>
+<img src="whiteboard.png" alt="Whiteboard pic or it didn't happen." />
+<figcaption>Whiteboard pic or it didn&#8217;t happen.</figcaption>
+</figure>
+
+<h2 id="background">Background</h2>
+
+<p>What started as a quick hackathon project eventually gained the attention of Lucidchart leadership and received the resources it deserved. Lucidchart is known for generating diagrams from data (org charts, mind maps, entity relationship diagrams, etc) and and AWS import represented an opportunity to uniquely position ourselves in the diagramming space.</p>
+
+<p>Diagrams are already part of the AWS ecosystem, and Amazon even provides guidelines for how the diagrams should look and how resources should be represented.</p>
+
+<p>Our goal: Helps customers create compliant diagrams automatically.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<h3 id="potentialcustomerinterviews">(Potential) Customer Interviews</h3>
+
+<p>I spoke to dozens of AWS users throughout the entirety of this project, both for discovery calls and usability tests. Some of these participants were long time Lucidchart users, others were evaluating our tool for potential future use. Each conversation provided unique insights into the world of a network engineer.</p>
+
+<h3 id="competitiveanalysis">Competitive Analysis</h3>
+
+<p>I audited multiple competitors with a product manager and an engineer, included Cloudcraft.io and Hava.io. Because this space is so fragmented, some potential customers even turned to Adobe Illustrator to create their diagrams. The analysis showed:</p>
+
+<ul>
+<li>Isometric layout isn’t useful (but looks pretty cool)</li>
+<li>Customers need to be able to move shapes after import (Hava.io is entirely locked down, can’t tell a story)</li>
+<li>Relationship lines could be shown dynamically (on-click like Have) or shown all the time</li>
+</ul>
+
+<figure>
+<img src="competitors.png" alt="Two competitors to our feature, Hava.io and CloudCraft" />
+<figcaption>Two competitors to our feature, Hava.io and CloudCraft</figcaption>
+</figure>
+
+<h3 id="knownproblems">Known Problems</h3>
+
+<p>The combined output of our competitive analysis and customer research proved a few initial hypotheses:</p>
+
+<ul>
+<li>Many customers have large, often unknown architectures (they may be a consultant, or it may be so large they don’t know everything that exists in the system)</li>
+<li>These diagrams are time consuming to make, but are necessary for compliance and communication (sometimes for legal reasons)</li>
+<li>These diagrams contains sensitive information, and there are trust issues handing that data to Lucidchart</li>
+<li>This feature would likely have a small user base with a high price tag (because only one or two people per company would need it)</li>
+</ul>
+
+<h3 id="divergentthinking">Divergent Thinking</h3>
+
+<p>Armed with our understanding of the industry and the needs of network engineers, we proposed three different solutions:</p>
+
+<ol>
+<li>A manual build process based on “groups” (this was the original hackathon approach)</li>
+<li>A node-by-node building experience based on security protocols</li>
+<li>An automatically-generated diagram of all resources laid out like a map</li>
+</ol>
+
+<h2 id="define">Define</h2>
+
+<h3 id="constraints">Constraints</h3>
+
+<p>Because of the constraints listed below, we settled on option 2: a node-by-node experience that would take far less time to build than option 3, and would still test the viability of this market.</p>
+
+<figure>
+<img src="constraints.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>Because AWS is very safeguarded within organizations, many teams have different ways of sharing these features. While some teams preferred to hand over a static snapshot through a JSON file, and others preferred a live connection through an actual API. We did our best to meet these various needs.</p>
+
+<p>The product needed to:</p>
+
+<ul>
+<li>Support import through JSON as well as IAM roles (API)</li>
+<li>Generate shapes based on real, known resources</li>
+<li>Draw lines based on real, known connections</li>
+<li>Automatically use lines to connect shapes whose security rules allow traffic between them</li>
+</ul>
+
+<h2 id="develop">Develop</h2>
+
+<p>I like to solve as much of the design and flow at a whiteboard with my team before I ever jump into actual UI design. Engineers and product managers helped me understand all of the moving pieces necessary to perform a successful import via JSON or API, and I proposed fine-grained interactions on the Lucidchart canvas.</p>
+
+<h3 id="theimportprocess">The Import Process</h3>
+
+<p>When importing, a customer can choose their preferred import method, and provide us the necessary details for authentication. Then, they’re present with diagram-specific options that will change the way we draw lines and structure their diagram.</p>
+
+<figure>
+<img src="node-import.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h3 id="thediagrammingprocess">The Diagramming Process</h3>
+
+<p>The foundation of the node-by-node solution automatically connects shapes based on known security protocols. It also suggests shapes to draw based on what we know is connected to the selected shape.</p>
+
+<figure>
+<img src="node-experience.gif" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="deliver">Deliver</h2>
+
+<p>At Lucid, we use Zeplin to redline designs (and our nifty <a href="/projects/lucid-design-system">Bill of Materials</a> for component deliver). I never spend too much time on handoff because by the team I’m giving designs to an engineer, we’ve talked through these problems dozens of times at a whiteboard, and I frequently check-in as things are being built.</p>
+
+<h2 id="outcomes">Outcomes</h2>
+
+<p>While we monitored this feature with analytics and event tracking, the sample size was too small to make any significant observations. Instead, we relied on qualitative interviews to inform our measurement of success.</p>
+
+<p>We called customers and had them use the feature while they talked to us (or talk to us about their previous experience with the feature). The feedback was fairly unanimous:</p>
+
+<ul>
+<li>It’s faster than manually drawing a diagram</li>
+<li>But almost all customers expected an automatic diagram (Option 3 in our discovery phase)</li>
+<li>Some customers even thought the feature was broken</li>
+<li>Still very useful for specific use cases (like security and compliance diagrams)</li>
+</ul>
+
+<p>While we had designed and built an incrementally useful feature, our constraints had stifled our ability to deliver real value. We petitioned leadership for more resources and more time to give this feature the chance it deserved.</p>
+
+<h2 id="round2—discovery">Round 2 — Discovery</h2>
+
+<p>My team went back to the drawing board to determine how we could feasibly build an automatically generated diagrams (termed “auto layout”) and meet our customer’s expectations.</p>
+
+<p>We relied on customer’s reactions to our first solution to fuel our decisions for this new solution.</p>
+
+<p>Through the combination of analytics and interviews, I gained an understanding of the pain points in the interview process and constructed a journey map (using emojis to convert emotion) to drive my team to alter the import process.</p>
+
+<p>View the full size user flow <a href="/aws-import-user-flow.pdf">here</a>.</p>
+
+<figure>
+<img src="journey-1.png" alt="A user flow of the initial import process and its pain points." />
+<figcaption>A user flow of the initial import process and its pain points.</figcaption>
+</figure>
+
+<h2 id="round2—define">Round 2 — Define</h2>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>Without getting to deep into the details of AWS, we knew we needed to:</p>
+
+<ul>
+<li>Continue addressing issues of security and trust</li>
+<li>Meet user expectation of an auto-generated diagram</li>
+<li>Write algorithms to lay shapes out intelligently in containers and grids</li>
+<li>Maintain the utility of our node-by-node experience for security and compliance diagrammers</li>
+<li>Make the import process simpler and easier</li>
+</ul>
+
+<h2 id="round2—develop">Round 2 — Develop</h2>
+
+<h3 id="newideas—sampledata">New Ideas—Sample Data</h3>
+
+<p>Because the sample size of this feature is so small, and the technical barrier is so high, the conversion funnel of our import process was very low. We decided to allow customers to try a sample import using a dummy AWS environment we provided. Without all the technical hassle, it showed customers how the features worked (and essentially functioned as a demo).</p>
+
+<figure>
+<img src="sample-data.png" alt="The newly proposed sample data dialog." />
+<figcaption>The newly proposed sample data dialog.</figcaption>
+</figure>
+
+<p>This new sample data options allowed a customer to completely bypass the technical rigor of this feature.</p>
+
+<figure>
+<img src="journey-2.png" alt="The sample data journey, which allows customers to skip most of the process." />
+<figcaption>The sample data journey, which allows customers to skip most of the process.</figcaption>
+</figure>
+
+<h3 id="autolayout">Auto Layout</h3>
+
+<p>We spent hundreds of man hours at whiteboard trying to determine the best solution for an automatic diagram. It presented numerous problems:</p>
+
+<ul>
+<li>Sometimes, virtual resources could appear in multiple places at once, making it impossible to accurately diagram in two dimensions. After numerous explorations, we decided to simply duplicate the shape.</li>
+<li>Some organization unfortunately opened all security ports so that all resources could speak to each other. In a relatively small environment of only 300 shapes, that environment would generate 90,000 lines of communication. We opted to turn off lines, and allow them to be selectively activated based on the user’s needs.</li>
+<li>After several hundred shapes, browsers begin to slow to a crawl and (sometimes) crash. By splitting each VPC onto its own page, we avoided having to render to many shapes at once.</li>
+</ul>
+
+<p>Here’s what an automatically laid out diagram looks like:</p>
+
+<figure>
+<img src="auto-layout.png" alt="An example of an automatic diagram layout" />
+<figcaption>An example of an automatic diagram layout</figcaption>
+</figure>
+
+<h2 id="round2—deliver">Round 2 — Deliver</h2>
+
+<p>This process was much slower than the previous node-by-node experience because of its novel approach. It took several weeks to define and build this experience, and I spent a lot of time sitting with engineers at their desks while we tried different solutions for the auto-layout algorithm.</p>
+
+<p>Again, I delivered a new import flow in Zeplin (now a little longer, featuring sample data and including options for auto layout).</p>
+
+<figure>
+<img src="auto-layout-import.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="outcomes">Outcomes</h2>
+
+<h3 id="sampledata">Sample Data</h3>
+
+<p>We implement the Sample Data idea as an A/B test and saw phenomenal results in the conversion funnel. Without sample data, only 7.1% of users completed the flow. With sample data, we saw a 66% improvement to a 10.7% completion rate.</p>
+
+<figure>
+<img src="ab-test-funnel.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<h3 id="autolayout">Auto Layout</h3>
+
+<p>Customers were elated to see their diagrams laid out automatically. The told about the hundreds of man-hours we saved them, and all the great things they could do with their extra time now.</p>
+
+<p>Unfortunately, the benefits stopped there. Once a customer began moving shapes, the diagram became very unwieldy. As luck would have, managing 300 procedurally generated shapes isn’t easy. Add 90,000 lines back into the mix and we were really in trouble.</p>
+
+<p>We had a bigger problem: customers were beginning to encounter what we call “the legibility ceiling.” They wanted to visualize more information than is human-consumable in one sitting. Their desire to visualize this much information led us into a much more innovative and forward-thinking space: data visualization.</p>
+
+<h2 id="futurework">Future Work</h2>
+
+<p>The AWS Import feature helped us encounter and understand the legibility ceiling. Using what we’ve learned here, my team has now pivoted to apply these insights to a new feature that is the opposite of AWS Import: organizational charts. This is a high-impact, highly visible feature with simple and predictable hierarchical structures.</p>
+
+<p>We’re developing systems that will automatically rearrange shapes as they’re moved, show/hide irrelevant information, and connect to live sources that allow the diagram to evolve with data over time. As we master these elements, this thinking will come full-circle and make AWS Import the ultimate visualization tool for AWS.</p>
+
+</body>
+</html>
+
